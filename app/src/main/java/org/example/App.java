@@ -3,18 +3,21 @@
  */
 package org.example;
 
+import java.util.Scanner;
+
 //€1 = Y177.31
 public class App {
+    Scanner scanner = new Scanner(System.in);
     public Double yenConverter() {
-        double exchangeRate = 177.31;
-        double euro = 12;
-        double yen = euro*exchangeRate;
+        double exchangeRate1 = 177.31;
+        double euro = scanner.nextDouble();
+        double yen = euro*exchangeRate1;
         return yen;
     }
 
     public Double euroConverter(){
         double exchangeRate2 = 0.0056;
-        double yen = 3000;
+        double yen = scanner.nextDouble();
         double euro = yen*exchangeRate2;
         return euro;
     }
