@@ -12,7 +12,15 @@ public class App {
         return yen;
     }
 
+    public Double euroConverter(){
+        double exchangeRate2 = 0.0056;
+        double yen = 3000;
+        double euro = yen*exchangeRate2;
+        return euro;
+    }
+
     public static void main(String[] args) {
         System.out.println(new App().yenConverter());
+        System.out.println(new App().euroConverter());
     }
 }
