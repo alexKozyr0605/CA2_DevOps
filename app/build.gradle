@@ -44,10 +44,6 @@ application {
     mainClass = 'org.example.App'
 }
 
-// jacoco {
-//     toolVersion = "0.8.7"
-// }
-
 tasks.named('test') {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()
@@ -57,34 +53,3 @@ tasks.named('test') {
         showStandardStreams = true
     }
 }
-
-// tasks.named('jacocoTestReport') {
-//     dependsOn test
-//     reports {
-//         xml.required = true
-//         csv.required = false
-//         html.outputLocation = layout.buildDirectory.dir('jacocoHtml')
-//     }
-// }
-
-// tasks.named('jacocoTestCoverageVerification') {
-//     violationRules {
-//         rule {
-//             limit {
-//                 minimum = 0.5
-//             }
-//         }
-//     }
-// }
-
-// tasks.named('check') {
-//     dependsOn jacocoTestCoverageVerification
-// }
-
-// task showProjectInfo {
-//     doLast {
-//         println "Project Name: $project.name"
-//         println "Java Version: ${java.toolchain.languageVersion.get()}"
-//         println "Main Class: ${application.mainClass.get()}"
-//     }
-// }
