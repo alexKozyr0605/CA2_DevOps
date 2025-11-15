@@ -15,8 +15,4 @@ class AppTest {
         App classUnderTest = new App();
         assertNotNull(classUnderTest.euroConverter(), "app should have a euro converter");
     }
-    @Test void appHasEuroConverter() {
-        App classUnderTest = new App();
-        assertNotNull(classUnderTest.euroConverter(), "app should have a euro converter");
-    }
 }
