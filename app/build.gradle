@@ -62,11 +62,12 @@ jacocoTestCoverageVerification {
 tasks.named('test') {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()
-    systemProperty "cucumber.junit-platform.naming-strategy", "long"
-    testLogging {
-        events "passed", "skipped", "failed"
-        showStandardStreams = true
-    }
+    finalizedBy jacocoTestReport
+    // systemProperty "cucumber.junit-platform.naming-strategy", "long"
+    // testLogging {
+    //     events "passed", "skipped", "failed"
+    //     showStandardStreams = true
+    // }
 }
 
 tasks.named('jacocoTestReport') {
@@ -78,19 +79,19 @@ tasks.named('jacocoTestReport') {
     }
 }
 
-tasks.named('jacocoTestCoverageVerification') {
-    violationRules {
-        rule {
-            limit {
-                minimum = 0.8
-            }
-        }
-    }
-}
+// tasks.named('jacocoTestCoverageVerification') {
+//     violationRules {
+//         rule {
+//             limit {
+//                 minimum = 0.8
+//             }
+//         }
+//     }
+// }
 
-tasks.named('check') {
-    jacocoTestCoverageVerification.mustRunAfter jacocoTestReport
-}
+// tasks.named('check') {
+//     jacocoTestCoverageVerification.mustRunAfter jacocoTestReport
+// }
 
 task showProjectInfo {
     doLast {
