@@ -22,10 +22,10 @@ steps:
     testResultsFiles: '**/TEST-*.xml'
     tasks: 'test'
 
-# - task: PublishCodeCoverageResults@2
-#   inputs:
-#     summaryFileLocation: '$(System.DefaultWorkingDirectory)/**/build/reports/jacoco/test/jacocoTestReport.xml'
-#     pathToSources: '$(System.DefaultWorkingDirectory)/app/src/main/java/'
+- task: PublishCodeCoverageResults@2
+  inputs:
+    summaryFileLocation: '$(System.DefaultWorkingDirectory)/**/build/reports/jacoco/test/jacocoTestReport.xml'
+    pathToSources: '$(System.DefaultWorkingDirectory)/app/src/main/java/'
 
 - task: Gradle@3
   inputs:
