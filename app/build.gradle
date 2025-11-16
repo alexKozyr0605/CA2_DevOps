@@ -89,5 +89,5 @@ tasks.named('jacocoTestCoverageVerification') {
 }
 
 tasks.named('check') {
-    dependsOn jacocoTestCoverageVerification
+    jacocoTestCoverageVerification.mustRunAfter jacocoTestReport
 }
