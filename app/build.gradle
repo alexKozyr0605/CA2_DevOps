@@ -9,7 +9,7 @@ plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     id 'application'
     id 'java'
-    // id 'jacoco'
+    id 'jacoco'
 }
 
 repositories {
@@ -40,58 +40,58 @@ java {
     }
 }
 
-// jacoco {
-//     toolVersion = "0.8.7"
-// }
+jacoco {
+    toolVersion = "0.8.7"
+}
 
 application {
     // Define the main class for the application.
     mainClass = 'org.example.App'
 }
 
-// jacocoTestCoverageVerification {
-//     violationRules {
-//         rule {
-//             limit {
-//                 minimum = 0.8
-//             }
-//         }
-//     }
-// }
+jacocoTestCoverageVerification {
+    violationRules {
+        rule {
+            limit {
+                minimum = 0.8
+            }
+        }
+    }
+}
 
 tasks.named('test') {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()
-    // finalizedBy jacocoTestReport
-    systemProperty "cucumber.junit-platform.naming-strategy", "long"
-    testLogging {
-        events "passed", "skipped", "failed"
-        showStandardStreams = true
+    finalizedBy jacocoTestReport
+    // systemProperty "cucumber.junit-platform.naming-strategy", "long"
+    // testLogging {
+    //     events "passed", "skipped", "failed"
+    //     showStandardStreams = true
+    // }
+}
+
+tasks.named('jacocoTestReport') {
+    dependsOn test
+    reports {
+        xml.required = true
+        csv.required = false
+        html.outputLocation = layout.buildDirectory.dir('jacocoHtml')
     }
 }
 
-// tasks.named('jacocoTestReport') {
-//     dependsOn test
-//     reports {
-//         xml.required = true
-//         csv.required = false
-//         html.outputLocation = layout.buildDirectory.dir('jacocoHtml')
-//     }
-// }
+tasks.named('jacocoTestCoverageVerification') {
+    violationRules {
+        rule {
+            limit {
+                minimum = 0.8
+            }
+        }
+    }
+}
 
-// tasks.named('jacocoTestCoverageVerification') {
-//     violationRules {
-//         rule {
-//             limit {
-//                 minimum = 0.8
-//             }
-//         }
-//     }
-// }
-
-// tasks.named('check') {
-//     jacocoTestCoverageVerification.mustRunAfter jacocoTestReport
-// }
+tasks.named('check') {
+    jacocoTestCoverageVerification.mustRunAfter jacocoTestReport
+}
 
 task showProjectInfo {
     doLast {
