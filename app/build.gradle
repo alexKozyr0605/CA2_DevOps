@@ -88,7 +88,7 @@ tasks.named('check') {
     dependsOn jacocoTestCoverageVerification
 }
 
-tasks.named('showProjectInfo') {
+tasks.register('showProjectInfo') {
     doLast {
         println "Project Name: $project.name"
         println "Java Version: ${java.toolchain.languageVersion.get()}"
