@@ -90,6 +90,7 @@ tasks.named('check') {
 }
 
 tasks.register('showProjectInfo') {
+    val projectName = project.name
     doLast {
         println "Project Name: $project.name"
         println "Java Version: ${java.toolchain.languageVersion.get()}"
