@@ -1,4 +1,4 @@
-# CA2_DevOps
+# X00197973_CA2
 
 ## Overview
 For this project, I decided to make an app that could convert Euro to Yen and vice versa. User input is not available.
