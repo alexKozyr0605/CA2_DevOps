@@ -19,7 +19,7 @@ The CI Pipeline for this project runs on Microsoft Azure and is implemented via 
 I have a separate branch for main and development. I experiment with code using the development branch and if they pass the unit test I push them to the main. Before pushing them, however I have to perform a pull request which results in me having to sort out which code I do and don't want on main.
 
 ## Testing Strategy
-My testing strategy was rather simplistic. I used a assertNotNull's for each method. Then for the test report I used Jacoco test report. Unfortunately, the highest the minimum test coverage could go was 60%. Despite this the pipeline managed to cover at least 75% of the code.
+My testing strategy was rather simplistic. I used a assertNotNull's for each method. Then for the test report I used Jacoco test report. Unfortunately, the highest the minimum test coverage could go was 60%. Despite this the pipeline managed to cover at least 75% of the code. As for static code analysis, I utilised SonarQube. SonarQube is the most reliable form of static code analysis for Java.
 
 ## Troubleshooting Guide
 Issue: Changes not being pushed to GitHub
